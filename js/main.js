@@ -43,10 +43,20 @@ const arrayTeam = [
 ]
 
 console.log(arrayTeam);
+const team = document.getElementById("team");
 
 for(let i = 0; i < arrayTeam.length; i++){
     let nome = arrayTeam[i].Name;
     let ruolo = arrayTeam[i].Role;
     let foto = arrayTeam[i].Image;
-    
+
+    let dev = {
+        "nome": nome,
+        "ruolo": ruolo,
+        "foto": foto
+    }
+    // console.log(nome +": " + ruolo+ ", " + foto);
+    console.log(dev);
+    team.innerHTML += `${dev.nome}, ${dev.ruolo}, ${dev.foto} ->>> `;
+
 }
