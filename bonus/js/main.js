@@ -3,59 +3,78 @@ const arrayTeam = [
         "Name": "Wayne",
         "Surname": "Barnett",
         "Role": "Founder & CEO",
-        "Image": "wayne-barnett-founder-ceo.jpg"
+        "Image": "img/wayne-barnett-founder-ceo.jpg"
     },
 
     {
         "Name": "Angela",
         "Surname": "Caroll",
         "Role": "Chief Editor",
-        "Image": "angela-caroll-chief-editor.jpg"
+        "Image": "img/angela-caroll-chief-editor.jpg"
     },
 
     {
         "Name": "Walter",
         "Surname": "Gordon",
         "Role": "Office Manager",
-        "Image": "walter-gordon-office-manager.jpg"
+        "Image": "img/walter-gordon-office-manager.jpg"
     },
 
     {
         "Name": "Angela",
         "Surname": "Lopez",
         "Role": "Social Media Manager",
-        "Image": "angela-lopez-social-media-manager.jpg"
+        "Image": "img/angela-lopez-social-media-manager.jpg"
     },
 
     {
         "Name": "Scott",
         "Surname": "Estrada",
         "Role": "Developer",
-        "Image": "scott-estrada-developer"
+        "Image": "img/scott-estrada-developer.jpg"
     },
 
     {
         "Name": "Barbara",
         "Surname": "Ramos",
         "Role": "Graphic Designer",
-        "Image": "wayne-barnett-founder-ceo.jpg"
+        "Image": "img/barbara-ramos-graphic-designer.jpg"
     }
 ]
 
 console.log(arrayTeam);
-const team = document.getElementById("team");
+// const team = document.getElementById("team");
+const container = document.querySelector(".container");
 
 for(let i = 0; i < arrayTeam.length; i++){
     let nome = arrayTeam[i].Name;
+    let cognome = arrayTeam[i].Surname;
     let ruolo = arrayTeam[i].Role;
     let foto = arrayTeam[i].Image;
 
-    let dev = {
-        "nome": nome,
-        "ruolo": ruolo,
-        "foto": foto
-    }
-    // console.log(nome +": " + ruolo+ ", " + foto);
-    console.log(dev);
-    team.innerHTML += `${dev.nome}, ${dev.ruolo}, ${dev.foto} ->>> `;
+    let card = document.createElement("div");
+    card.classList.add("card");
+    console.log(card);
+    container.append(card);
+
+    let photo = document.createElement("div");
+    let image = document.createElement("img");
+    image.classList.add("image");
+    image.src = foto;
+    photo.append(image);
+    card.append(photo);
+    
+    let name = document.createElement("div");
+    name.classList.add("name", "surname");
+    name.append(nome + " " + cognome);
+    card.append(name);
+    
+    let role = document.createElement("div");
+    role.classList.add("role");
+    role.append(ruolo)
+    card.append(role);
+}
+
+function createObjectCard(){
+    
 }
