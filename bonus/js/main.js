@@ -53,28 +53,49 @@ for(let i = 0; i < arrayTeam.length; i++){
     let foto = arrayTeam[i].Image;
 
     let card = document.createElement("div");
-    card.classList.add("card");
-    console.log(card);
-    container.append(card);
+    // card.classList.add("card");
+    // console.log(card);
+    // container.append(card);
 
     let photo = document.createElement("div");
     let image = document.createElement("img");
-    image.classList.add("image");
-    image.src = foto;
-    photo.append(image);
-    card.append(photo);
+    // image.classList.add("image");
+    // image.src = foto;
+    // photo.append(image);
+    // card.append(photo);
     
     let name = document.createElement("div");
-    name.classList.add("name", "surname");
-    name.append(nome + " " + cognome);
-    card.append(name);
+    // name.classList.add("name", "surname");
+    // name.append(nome + " " + cognome);
+    // card.append(name);
     
     let role = document.createElement("div");
-    role.classList.add("role");
-    role.append(ruolo)
-    card.append(role);
+    // role.classList.add("role");
+    // role.append(ruolo)
+    // card.append(role);
+
+
+    createObjectCard(card, photo, image, foto, name, nome, cognome, role, ruolo);
+
 }
 
-function createObjectCard(){
-    
+
+function createObjectCard(scheda,foto, immagine, selfie, nome, nomeDev, cognomeDev, ruolo, ruoloDev ){
+    scheda.classList.add("card");
+    console.log(scheda);
+    container.append(scheda);
+
+    immagine.classList.add("image");
+    immagine.src = selfie;
+    foto.append(immagine);
+    scheda.append(foto);
+
+    nome.classList.add("name", "surname");
+    nome.append(nomeDev + " " + cognomeDev);
+    scheda.append(nome);
+
+    ruolo.classList.add("role");
+    ruolo.append(ruoloDev)
+    scheda.append(ruolo);
+
 }
