@@ -42,60 +42,39 @@ const arrayTeam = [
     }
 ]
 
-console.log(arrayTeam);
-// const team = document.getElementById("team");
 const container = document.querySelector(".container");
 
-for(let i = 0; i < arrayTeam.length; i++){
+for (let i = 0; i < arrayTeam.length; i++) {
+    let foto = arrayTeam[i].Image;
     let nome = arrayTeam[i].Name;
     let cognome = arrayTeam[i].Surname;
     let ruolo = arrayTeam[i].Role;
-    let foto = arrayTeam[i].Image;
 
-    let card = document.createElement("div");
-    // card.classList.add("card");
-    // console.log(card);
-    // container.append(card);
-
-    let photo = document.createElement("div");
-    let image = document.createElement("img");
-    // image.classList.add("image");
-    // image.src = foto;
-    // photo.append(image);
-    // card.append(photo);
-    
-    let name = document.createElement("div");
-    // name.classList.add("name", "surname");
-    // name.append(nome + " " + cognome);
-    // card.append(name);
-    
-    let role = document.createElement("div");
-    // role.classList.add("role");
-    // role.append(ruolo)
-    // card.append(role);
-
-
-    createObjectCard(card, photo, image, foto, name, nome, cognome, role, ruolo);
-
+    createObjectCard(foto, nome, cognome, ruolo);
 }
 
 
-function createObjectCard(scheda,foto, immagine, selfie, nome, nomeDev, cognomeDev, ruolo, ruoloDev ){
-    scheda.classList.add("card");
-    console.log(scheda);
-    container.append(scheda);
+function createObjectCard(selfie, nomeDev, cognomeDev, ruoloDev) {
+    let card = document.createElement("div");
+    let photo = document.createElement("div");
+    let image = document.createElement("img");
+    let name = document.createElement("div");
+    let role = document.createElement("div");
 
-    immagine.classList.add("image");
-    immagine.src = selfie;
-    foto.append(immagine);
-    scheda.append(foto);
+    card.classList.add("card");
+    console.log(card);
+    container.append(card);
 
-    nome.classList.add("name", "surname");
-    nome.append(nomeDev + " " + cognomeDev);
-    scheda.append(nome);
+    image.classList.add("image");
+    image.src = selfie;
+    photo.append(image);
+    card.append(photo);
 
-    ruolo.classList.add("role");
-    ruolo.append(ruoloDev)
-    scheda.append(ruolo);
+    name.classList.add("name", "surname");
+    name.append(nomeDev + " " + cognomeDev);
+    card.append(name);
 
+    role.classList.add("role");
+    role.append(ruoloDev)
+    card.append(role);
 }
